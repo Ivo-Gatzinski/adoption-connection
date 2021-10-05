@@ -6,7 +6,7 @@ var apiKey = "WY3pauZYdH3LtBAMrg6nUuprjR3ob4F4QkCualrLU8uNjQuiz2";
 
 var apiSecret = "rUMx8wxwlkTMLB4TjZgjHsJdtK3v9Wo4P5t21lfc";
 
-var area = "San Diego";
+var zipCode = "10017";
 
 var breed = "Maltese";
 
@@ -29,16 +29,11 @@ fetch(url, {
 
 }).then(function (data) {
 
-	// Log the API data
-	console.log('token', data);
-
   token = data.access_token;
-
-  console.log(token);
 
   //pass token to dog search
 
-  getDogs(dogCall, token);
+  getDogs(dogCall + "&breed=" + breed + "&location=" + zipCode + "&distance=50", token);
 
 
 });
