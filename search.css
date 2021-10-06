@@ -28,14 +28,19 @@ h3 {
 }
 
 .header {
-    text-align: center;
+    text-align: right;
     top: auto;
     margin: 3em auto;
+    
 }
 
 .sidebar {
-    background: rgb(61, 79, 93);
+    background: rgb(23, 55, 80);
     color: #fff;
+    width: 250px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0;
 }
 
 .brand-title,
@@ -77,10 +82,10 @@ h3 {
 
 .content-subhead {
     text-transform: uppercase;
-    color: #aaa;
+    color: rgb(23, 55, 80);
     border-bottom: 1px solid #eee;
     padding: 0.4em 0;
-    font-size: 80%;
+    font-size: 120%;
     font-weight: 500;
     letter-spacing: 0.1em;
 }
