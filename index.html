@@ -16,7 +16,7 @@
   </head>
   <body class="min-100-vh flex-column">
     <header class="p-5 text-center text-white bg-primary">
-      <h1>Open Weather APIs Test</h1>
+      <h1>Petfinder and Google API Test</h1>
     </header>
     <main class="flex-row justify-center align-center col-auto p-4 bg-light">
       <section class="card card-rounded col-7 bg-white">
@@ -35,30 +35,17 @@
             ></strong>
           </p>
         </div>
-        <footer class="card-footer text-center">
-          Open the network activity tab to see the status.
-        </footer>
       </section>
-      <section class="card card-rounded col-7 bg-white">
-        <header class="card-header text-center">
-          <h2 class="text-white">Fetch Demo</h2>
-        </header>
-        <div class="text-center pt-4">
-            <input class="form-control" type="text" placeholder="Click Me First"/>
-          <button type="button" class="btn btn-primary search">
-            Search for City First
-          </button>
-          <hr>
-          <button class="btn btn-danger" id="fetch-button">Click Me Next</button>
-        </div>
-        <table class="card-body table mx-auto my-4">
-          <th>
-            <p class="my-4">Results</p>
-          </th>
-          <tbody id="repo-table" class="mx-auto text-center"></tbody>
-        </table>
-      </section>
+      <div id="map"></div>
     </main>
+    <footer class="card-footer text-center">
+      Open the network activity tab to see the status.
+    </footer>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDj9CXrdgaYnIDdvXSTdFuHcCJAY1Slukg&callback=initMap&v=weekly"
+      async
+    ></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

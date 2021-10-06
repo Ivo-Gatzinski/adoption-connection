@@ -97,9 +97,9 @@ function getDogs(url, token) {
 
         // do the following for each of the five results:
 
-        address = data.animals[0].contact.address;
+        address_0 = data.animals[0].contact.address;
 
-        console.log(address);
+        console.log(address_0);
 
         address1 = data.animals[0].contact.address.address1;
 
@@ -146,15 +146,18 @@ function getDogs(url, token) {
         getOrg(orgCall + "/" + org_id, token);
 
 
-
       });
   }
 
+// get token first
+
+getToken(tokenCall);
+
 // google api
 
-const geocoder = new google.maps.geocoder();
-let address = ""
-geocoder.geocode ({address: address } ,
+const geocoder = new google.maps.geocoder(stringAddress);
+
+geocoder.geocode ({address: stringAddress } ,
   (results, status) =>{
     if (status === "ok") {
       var latitude = results[0].geometry.location.lat();
@@ -189,8 +192,4 @@ function toggleBounce() {
 
 
 
-
-// get token first
-
-getToken(tokenCall);
 
