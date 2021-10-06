@@ -42,6 +42,8 @@ fetch(url, {
 
 }
 
+//get organization name function
+
 function getOrg(url, token) {
   fetch(url, { headers: {"Authorization": "Bearer " + token
   }
@@ -63,7 +65,7 @@ function getOrg(url, token) {
     .then(function (data) {
       console.log(data);
 
-      orgName = data.organization.name
+      orgName = data.organization.name;
 
       console.log(orgName);
 
@@ -98,6 +100,10 @@ function getDogs(url, token) {
         address = data.animals[0].contact.address;
 
         console.log(address);
+        
+        addressString = JSON.stringify(address);
+
+        console.log(addressString);
 
         age = data.animals[0].age;
 
