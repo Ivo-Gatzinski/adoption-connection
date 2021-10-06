@@ -100,10 +100,34 @@ function getDogs(url, token) {
         address = data.animals[0].contact.address;
 
         console.log(address);
-        
-        addressString = JSON.stringify(address);
 
-        console.log(addressString);
+        address1 = data.animals[0].contact.address.address1;
+
+        console.log(address1);
+
+        address2 = data.animals[0].contact.address.address2;
+
+        console.log(address2);
+
+        city = data.animals[0].contact.address.city;
+
+        console.log(city);
+
+        country = data.animals[0].contact.address.country;
+
+        console.log(country);
+
+        postcode = data.animals[0].contact.address.postcode;
+
+        console.log(postcode);
+
+        state = data.animals[0].contact.address.state;
+
+        console.log(state);
+
+        stringAddress = address1 + ", " + city + ", " + state + ", " + postcode;
+
+        console.log(stringAddress);
 
         age = data.animals[0].age;
 
@@ -121,8 +145,50 @@ function getDogs(url, token) {
 
         getOrg(orgCall + "/" + org_id, token);
 
+
+
       });
   }
+
+// google api
+
+const geocoder = new google.maps.geocoder();
+let address = ""
+geocoder.geocode ({address: address } ,
+  (results, status) =>{
+    if (status === "ok") {
+      var latitude = results[0].geometry.location.lat();
+      var longitude = results [0].geometry.location.lng();
+    initialize(latitude, longitude);
+  }
+});
+
+
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 13,
+    center: { lat: 32.8800604, lng: -117.2340135 },
+  });
+
+  marker = new google.maps.Marker({
+    map,
+    draggable: true,
+    animation: google.maps.Animation.DROP,
+    position: { lat: 32.8800604, lng: -117.2340135  },
+  });
+  marker.addListener("click", toggleBounce);
+}
+
+function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
+
+
+
 
 // get token first
 
