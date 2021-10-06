@@ -1,26 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A layout example that shows off a blog page with a list of posts."
+    />
     <title>Blog &ndash; Layout Examples &ndash; Pure</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
-    <link rel="stylesheet" href="search.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+      integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css"
+    />
+    <link rel="stylesheet" href="search.css" />
+  </head>
+  <body>
+    <div id="layout" class="pure-g">
+      <div id="results" class="content pure-u-1 pure-u-md-3-4">
+        <h2>RESULTS:</h2>
+        <!-- Name  -- Picture -- Breed -- Age -- Name of Org/Owner  -->
+        <div class="dog-row">
+          <h3>Fido</h3>
+          <img src="https://placedog.net/200" alt="place holder dog" />
+          <p>Breed: dauchshund</p>
+          <p>Age: dauchshund</p>
+          <p>Org/Owner: dauchshund</p>
+        </div>
 
-<div id="layout" class="pure-g">
-    
+        <div class="dog-row">
+            <h3>Fido</h3>
+            <img src="https://placedog.net/200" alt="place holder dog" />
+            <p>Breed: dauchshund</p>
+            <p>Age: dauchshund</p>
+            <p>Org/Owner: dauchshund</p>
+          </div>
+          <div class="dog-row">
+            <h3>Fido</h3>
+            <img src="https://placedog.net/200" alt="place holder dog" />
+            <p>Breed: dauchshund</p>
+            <p>Age: dauchshund</p>
+            <p>Org/Owner: dauchshund</p>
+          </div>
+          <div class="dog-row">
+            <h3>Fido</h3>
+            <img src="https://placedog.net/200" alt="place holder dog" />
+            <p>Breed: dauchshund</p>
+            <p>Age: dauchshund</p>
+            <p>Org/Owner: dauchshund</p>
+          </div>
+          <div class="dog-row">
+            <h3>Fido</h3>
+            <img src="https://placedog.net/200" alt="place holder dog" />
+            <p>Breed: dauchshund</p>
+            <p>Age: dauchshund</p>
+            <p>Org/Owner: dauchshund</p>
+          </div>
+      </div>
+      <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="pure-g">
+     
+            <form id="form" class="pure-form pure-form-stacked">
+              <fieldset>
+          
+                <label for="zipcode">Zipcode</label>
+                <input id="code" type="text" placeholder="Zipcode">
+          
+          
+                <label for="breeds">Breeds</label>
+                <input id="breeds" type="text" placeholder="Breeds">
+          
+                <button type="submit" class="pure-button">Search!</button>
+              </fieldset>
+            </form>
+        </div>
+          <table class="pure-table">
+            <thead>
+              <tr>
+              <th colspan="3">Favorites</th>
+              </tr>
+            </thead>
+            <!-- JS placeholder for favorite data to generate <tr> blocks with values of variables created holding Strings and Variables (pulling the data from the API)-->
+            <tbody id="favoritesTable" class="table">
+              <!-- JS  HTML template to create in JS -->
+              
+            </tbody>
+          </table>
+         </div>
 
-    <div class="content pure-u-1 pure-u-md-3-4">
-        
+      </div>
     </div>
-    <div class="sidebar pure-u-1 pure-u-md-1-4">
-        
-    </div>
-</div>
-
-</body>
+  </body>
 </html>
