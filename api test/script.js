@@ -107,6 +107,10 @@ function getDogs(url, token) {
 
         console.log(dogName);
 
+        smallPic = data.animals[0].photos[0].small;
+
+        console.log(smallPic);
+
         org_id = data.animals[0].organization_id;
 
         getOrg(orgCall + "/" + org_id, token);
