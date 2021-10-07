@@ -151,8 +151,6 @@ function getDogs(url, token) {
         codeAddress(stringAddress_3);
         codeAddress(stringAddress_4);
   
-        console.log("Two");
-  
         dogsInfo = [
           [dogName_0, smallPic_0, breed_0, age_0],
           [dogName_1, smallPic_1, breed_1, age_1],
@@ -225,8 +223,6 @@ function codeAddress(puppyAddress) {
 // get params from URL
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
-
-console.log(params);
 
 breed = params.breed;
 
