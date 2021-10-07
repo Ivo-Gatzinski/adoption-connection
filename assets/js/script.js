@@ -174,7 +174,7 @@ function getDogs(url, token) {
         [dogName_3, smallPic_3, breed_3, age_3, orgName_3],
         [dogName_4, smallPic_3, breed_4, age_4, orgName_4],
       ];
-      localStorage.setItem("data", saveData);
+      localStorage.setItem("data", JSON.stringify(saveData));
 
       saveAddress = [
         stringAddress_0,
@@ -183,7 +183,7 @@ function getDogs(url, token) {
         stringAddress_3,
         stringAddress_4,
       ];
-      localStorage.setItem("locations", saveAddress);
+      localStorage.setItem("locations", JSON.stringify(saveAddress));
     });
 }
 
@@ -232,7 +232,9 @@ $("#form").on("submit", function (event) {
 
   getToken(tokenCall, breed, zipCode);
 
-  // window.location.assign("./search.html");
+//switch pages
+
+location.href = "./search.html";
 
 
 });
@@ -240,7 +242,17 @@ $("#form").on("submit", function (event) {
 
 // populate puppies results
 
-// dogName0 = localStorage.getItem("data");
+// get the data back from local storage
+
+getData = localStorage.getItem("data");
+gotData = JSON.parse(getData);
+console.log(gotData);
+
+getAddresses = localStorage.getItem("locations");
+gotAddresses = JSON.parse(getAddresses);
+console.log(gotAddresses);
+
+
 // dogName1 = 
 // dogName2 = 
 // dogName3 = 
