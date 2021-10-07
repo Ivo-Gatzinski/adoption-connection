@@ -101,6 +101,7 @@ h2 {
 
 
 .photo-box img {
+    display:flex;
     position:relative;
     left:800px;
     max-width: 100%;
@@ -109,9 +110,10 @@ h2 {
 }
 
 #map {
+    display:flex;
     position: relative;
     right: -800px;
-    width:500px;
+    width:600px;
     height: 300px;
   }
   .footer {
@@ -150,10 +152,25 @@ h2 {
 }
 @media (max-width: 1270px) {
     aside {
-        float:left;
+        display:flex;
+        flex-direction: column;
         width:300px;
     }
     #map {
+        float: left;
+        width:300px;
+        height:300px;
+    }
+}
+@media (max-width:992px) {
+    aside {
+        display:flex;
+        flex-direction: column;
+        width:300px;
+    }
+    #map {
+        display:flex;
+        flex-direction: column;
         float: left;
         width:300px;
         height:300px;
