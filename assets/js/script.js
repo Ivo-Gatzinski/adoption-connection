@@ -232,6 +232,23 @@ $("#form").on("submit", function (event) {
 
   getToken(tokenCall, breed, zipCode);
 
-  window.location.assign("./search.html");
+  // window.location.assign("./search.html");
+
 
 });
+
+
+// populate puppies results
+
+// dogName0 = localStorage.getItem("data");
+// dogName1 = 
+// dogName2 = 
+// dogName3 = 
+// dogName4 = 
+
+// $(".dog0").children().first().text(dogName0);
+// $(".dog1");
+// $(".dog2");
+// $(".dog3");
+// $(".dog4");
+
