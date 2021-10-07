@@ -90,7 +90,6 @@ h2 {
 .photo-box {
     position: absolute;
     padding:20px;
-    right:-600px;
     top:60px;
     height: 250px;
     text-align: center;
@@ -102,17 +101,18 @@ h2 {
 
 
 .photo-box img {
+    position:relative;
+    left:800px;
     max-width: 100%;
     height: auto;
-    max-height: 650px;
+    max-height: 600px;
 }
 
 #map {
-    position: absolute;
-    top: 800px;
-    left:1550px;
-    width:600px;
-    height: 400px;
+    position: relative;
+    right: -800px;
+    width:500px;
+    height: 300px;
   }
   .footer {
     color: #7f8c8d;
@@ -141,26 +141,21 @@ h2 {
             float: right;
         }
 
-    /* We increase the height of the splash-container */
-/*    .splash-container {
-        height: 500px;
-    }*/
-
-    /* We decrease the width of the .splash, since we have more width
-    to work with */
-    .splash {
-        width: 50%;
-        height: 50%;
-    }
-
-    .splash-head {
-        font-size: 250%;
-    }
-
 
     /* We remove the border-separator assigned to .l-box-lrg */
     .l-box-lrg {
         border: none;
     }
 
+}
+@media (max-width: 1270px) {
+    aside {
+        float:left;
+        width:300px;
+    }
+    #map {
+        float: left;
+        width:300px;
+        height:300px;
+    }
 }
