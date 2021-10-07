@@ -1,0 +1,166 @@
+
+body {
+    font-family: 'Bubblegum Sans', cursive;
+    line-height: 1.7em;
+    color: #000066;
+    font-size: 13px;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+position: relative;
+padding:30px;
+margin:20px;
+}
+
+.container{
+    position: relative;
+    left:50px;
+}
+
+.profile {
+    padding:50px;
+}
+
+#learn-more {
+    font-size: 26px;
+
+}
+
+h1 {
+    font-family: 'Abril Fatface', cursive;
+}
+h2 {
+    font-size: 36px;
+}
+#name, #age, #breed, #location, #profile {
+    font-family: 'Permanent Marker', cursive;
+    color:#e2ac41;
+    font-size: 48px;
+}
+
+#learn-button {
+    display:relative;
+    right:-200px;
+}
+.home-menu {
+    padding: 0.5em;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+.home-menu {
+    background: #1f8dd6;
+}
+.pure-menu.pure-menu-fixed {
+    /* Fixed menus normally have a border at the bottom. */
+    border-bottom: none;
+    /* I need a higher z-index here because of the scroll-over effect. */
+    z-index: 4;
+}
+
+.home-menu .pure-menu-heading {
+    color: white;
+    font-weight: 400;
+    font-size: 120%;
+}
+
+.home-menu .pure-menu-selected a {
+    color: white;
+}
+#adoption-connection {
+    font-size: 36px;
+}
+.home-menu a {
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    font-size: 24px;
+
+}
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: #AECFE5;
+}
+
+.photo-box {
+    position: absolute;
+    padding:20px;
+    right:-600px;
+    top:60px;
+    height: 250px;
+    text-align: center;
+}
+
+.photo-box-thin {
+    height: 120px;
+}
+
+
+.photo-box img {
+    max-width: 100%;
+    height: auto;
+    max-height: 650px;
+}
+
+#map {
+    position: absolute;
+    top: 800px;
+    left:1550px;
+    width:600px;
+    height: 400px;
+  }
+  .footer {
+    color: #7f8c8d;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.is-center {
+    text-align: center;
+}
+
+ 
+@media (min-width: 48em) {
+
+    /* We increase the body font size */
+    body {
+        font-size: 16px;
+    }
+
+    /* We can align the menu header to the left, but float the
+    menu items to the right. */
+    .home-menu {
+        text-align: left;
+    }
+        .home-menu ul {
+            float: right;
+        }
+
+    /* We increase the height of the splash-container */
+/*    .splash-container {
+        height: 500px;
+    }*/
+
+    /* We decrease the width of the .splash, since we have more width
+    to work with */
+    .splash {
+        width: 50%;
+        height: 50%;
+    }
+
+    .splash-head {
+        font-size: 250%;
+    }
+
+
+    /* We remove the border-separator assigned to .l-box-lrg */
+    .l-box-lrg {
+        border: none;
+    }
+
+}
