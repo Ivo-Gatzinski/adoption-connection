@@ -159,31 +159,33 @@ function getDogs(url, token) {
       orgName_3 = getOrg(orgCall + "/" + org_id_3, token);
       orgName_4 = getOrg(orgCall + "/" + org_id_4, token);
 
+
+      // save data in local storage
+
+saveData = [
+  [dogName_0, smallPic_0, breed_0, age_0, orgName_0],
+  [dogName_1, smallPic_1, breed_1, age_1, orgName_1],
+  [dogName_2, smallPic_2, breed_2, age_2, orgName_2],
+  [dogName_3, smallPic_3, breed_3, age_3, orgName_3],
+  [dogName_4, smallPic_3, breed_4, age_4, orgName_4],
+];
+localStorage.setItem("data", JSON.stringify(saveData));
+
+saveAddress = [
+  stringAddress_0,
+  stringAddress_1,
+  stringAddress_2,
+  stringAddress_3,
+  stringAddress_4,
+];
+localStorage.setItem("locations", JSON.stringify(saveAddress));
+
       codeAddress(stringAddress_0);
       codeAddress(stringAddress_1);
       codeAddress(stringAddress_2);
       codeAddress(stringAddress_3);
       codeAddress(stringAddress_4);
 
-      // save data in local storage
-
-      saveData = [
-        [dogName_0, smallPic_0, breed_0, age_0, orgName_0],
-        [dogName_1, smallPic_1, breed_1, age_1, orgName_1],
-        [dogName_2, smallPic_2, breed_2, age_2, orgName_2],
-        [dogName_3, smallPic_3, breed_3, age_3, orgName_3],
-        [dogName_4, smallPic_3, breed_4, age_4, orgName_4],
-      ];
-      localStorage.setItem("data", JSON.stringify(saveData));
-
-      saveAddress = [
-        stringAddress_0,
-        stringAddress_1,
-        stringAddress_2,
-        stringAddress_3,
-        stringAddress_4,
-      ];
-      localStorage.setItem("locations", JSON.stringify(saveAddress));
     });
 }
 
