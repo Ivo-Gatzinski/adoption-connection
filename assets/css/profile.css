@@ -1,5 +1,6 @@
 
 body {
+    font-family: 'Bubblegum Sans', cursive;
     line-height: 1.7em;
     color: #000066;
     font-size: 13px;
@@ -107,8 +108,21 @@ h2 {
 }
 
 #map {
-    height: 100%;
+    position: absolute;
+    top: 800px;
+    left:1550px;
+    width:600px;
+    height: 400px;
   }
+  .footer {
+    color: #7f8c8d;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.is-center {
+    text-align: center;
+}
 
  
 @media (min-width: 48em) {
