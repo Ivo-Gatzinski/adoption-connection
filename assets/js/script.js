@@ -49,11 +49,8 @@ function getOrg(url, token) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
 
       orgName = data.organization.name;
-
-      console.log(orgName);
 
     });
 }
@@ -82,7 +79,7 @@ function getDogs(url, token) {
         state_0 = data.animals[0].contact.address.state;
         postcode_0 = data.animals[0].contact.address.postcode;
         stringAddress_0 = address1_0 + ", " + city_0 + ", " + state_0 + ", " + postcode_0;
-        console.log(stringAddress_0);
+        
 
         address_1 = data.animals[1].contact.address;
         address1_1 = data.animals[1].contact.address.address1;
@@ -91,7 +88,7 @@ function getDogs(url, token) {
         state_1 = data.animals[1].contact.address.state;
         postcode_1 = data.animals[1].contact.address.postcode;
         stringAddress_1 = address1_1 + ", " + city_1 + ", " + state_1 + ", " + postcode_1;
-        console.log(stringAddress_1);
+        
 
         address_2 = data.animals[2].contact.address;
         address1_2 = data.animals[2].contact.address.address1;
@@ -100,7 +97,7 @@ function getDogs(url, token) {
         state_2 = data.animals[2].contact.address.state;
         postcode_2 = data.animals[2].contact.address.postcode;
         stringAddress_2 = address1_2 + ", " + city_2 + ", " + state_2 + ", " + postcode_2;
-        console.log(stringAddress_2);
+        
 
         address_3 = data.animals[3].contact.address;
         address1_3 = data.animals[3].contact.address.address1;
@@ -109,7 +106,7 @@ function getDogs(url, token) {
         state_3 = data.animals[3].contact.address.state;
         postcode_3 = data.animals[3].contact.address.postcode;
         stringAddress_3 = address1_3 + ", " + city_3 + ", " + state_3 + ", " + postcode_3;
-        console.log(stringAddress_3);
+        
 
         address_4 = data.animals[4].contact.address;
         address1_4 = data.animals[4].contact.address.address1;
@@ -118,14 +115,15 @@ function getDogs(url, token) {
         state_4 = data.animals[4].contact.address.state;
         postcode_4 = data.animals[4].contact.address.postcode;
         stringAddress_4 = address1_4 + ", " + city_4 + ", " + state_4 + ", " + postcode_4;
-        console.log(stringAddress_4);
       
-
+// Age
         age_0 = data.animals[0].age;
         age_1 = data.animals[1].age;
         age_2 = data.animals[2].age;
         age_3 = data.animals[3].age;
         age_4 = data.animals[4].age;
+
+        // Name
 
         dogName_0 = data.animals[0].name;
         dogName_1 = data.animals[1].name;
@@ -133,11 +131,23 @@ function getDogs(url, token) {
         dogName_3 = data.animals[3].name;
         dogName_4 = data.animals[4].name;
 
+        //Pic
+
         smallPic_0 = data.animals[0].photos[0].small;
         smallPic_1 = data.animals[1].photos[1].small;
         smallPic_2 = data.animals[2].photos[2].small;
         smallPic_3 = data.animals[3].photos[3].small;
         // smallPic_4 = data.animals[4].photos[4].small;
+
+        //Breed 
+
+        breed_0 = data.animals[0].breeds.primary;
+        breed_1 = data.animals[1].breeds.primary;
+        breed_2 = data.animals[2].breeds.primary;
+        breed_3 = data.animals[3].breeds.primary;
+        breed_4 = data.animals[4].breeds.primary;
+
+// Org Name
 
         org_id_0 = data.animals[0].organization_id;
         org_id_1 = data.animals[1].organization_id;
@@ -156,6 +166,10 @@ function getDogs(url, token) {
         codeAddress(stringAddress_2);
         codeAddress(stringAddress_3);
         codeAddress(stringAddress_4);
+
+        // save data in local storage
+
+
 
       });
   }
