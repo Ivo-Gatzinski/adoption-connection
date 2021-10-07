@@ -166,6 +166,10 @@ function getDogs(url, token) {
       codeAddress(stringAddress_4);
 
       // save data in local storage
+
+    saveData = [ [dogName_0, smallPic_0, breed_0, age_0, orgName_0], [dogName_1, smallPic_1, breed_1, age_1, orgName_1], [dogName_2, smallPic_2, breed_2, age_2, orgName_2], [dogName_3, smallPic_3, breed_3, age_3, orgName_3], [dogName_4, smallPic_3, breed_4, age_4, orgName_4]];
+    localStorage.setItem("data", saveData);
+
     });
 }
 
