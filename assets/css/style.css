@@ -160,6 +160,7 @@ a.pure-button-primary {
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
+    font-family: 'Fredoka One', cursive;
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -172,6 +173,7 @@ a.pure-button-primary {
 
 /* This is the subheading that appears on the blue section */
 .splash-subhead {
+    font-family: 'Bubblegum Sans', cursive;
     color: white;
     letter-spacing: 0.05em;
     opacity: 0.8;
@@ -226,7 +228,7 @@ a.pure-button-primary {
 
 /* This is the class used for the footer */
 .footer {
-    background: #111;
+
     position: fixed;
     bottom: 0;
     width: 100%;
