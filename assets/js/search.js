@@ -25,7 +25,7 @@ function getToken(url, breed, zipcode) {
     },
   })
     .then(function (resp) {
-      // Return the response as JSON
+
       return resp.json();
     })
     .then(function (data) {
@@ -44,7 +44,6 @@ function getToken(url, breed, zipcode) {
 function getOrg(url, token, selector) {
   fetch(url, { headers: { Authorization: "Bearer " + token } })
     .then(function (response) {
-      console.log(response);
 
       return response.json();
     })
@@ -60,14 +59,12 @@ function getOrg(url, token, selector) {
 function getDogs(url, token) {
   fetch(url, { headers: { Authorization: "Bearer " + token } })
     .then(function (response) {
-      console.log(response);
 
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
 
-      // do the following for each of the five results:
+      // get all info for dogs:
 
         //address
 
@@ -164,13 +161,13 @@ function getDogs(url, token) {
           [dogName_4, smallPic_3, breed_4, age_4],
         ];
   
-        console.log(dogsInfo);
+
+    // call function to display dog info
 
         showDogsInfo();
 
-        // save data in local storage
-        // localStorage.setItem("data", JSON.stringify(saveData));
-  
+        // save addresses for google maps
+
         saveAddress = [
           stringAddress_0,
           stringAddress_1,
@@ -179,15 +176,7 @@ function getDogs(url, token) {
           stringAddress_4,
         ];
   
-        // localStorage.setItem("locations", JSON.stringify(saveAddress));
-
-      // Org Name
-
-    //   org_id_0 = data.animals[0].organization_id;
-    //   org_id_1 = data.animals[1].organization_id;
-    //   org_id_2 = data.animals[2].organization_id;
-    //   org_id_3 = data.animals[3].organization_id;
-    //   org_id_4 = data.animals[4].organization_id;
+      // get Org Name for five results
 
     getOrg(orgCall + "/" + data.animals[0].organization_id, token, ".dog0");
     getOrg(orgCall + "/" + data.animals[1].organization_id, token, ".dog1");
@@ -195,12 +184,7 @@ function getDogs(url, token) {
     getOrg(orgCall + "/" + data.animals[3].organization_id, token, ".dog3");
     getOrg(orgCall + "/" + data.animals[4].organization_id, token, ".dog4");
     
-    
-    //   getOrg(orgCall + "/" + org_id_1, token);
-    //   getOrg(orgCall + "/" + org_id_2, token);
-    //   getOrg(orgCall + "/" + org_id_3, token);
-    //   getOrg(orgCall + "/" + org_id_4, token);
-      
+         
     });
 }
 
@@ -252,18 +236,6 @@ getToken(tokenCall, breed, zipcode);
 
 
 // populate puppies results
-
-// get the data back from local storage
-
-
-
-// console.log(gotData);
-
-getAddresses = localStorage.getItem("locations");
-gotAddresses = JSON.parse(getAddresses);
-console.log(gotAddresses);
-
-console.log("One");
 
 function showDogsInfo () {
 
@@ -345,6 +317,8 @@ $(".dog4")
   .text("Org/Owner: " + dogsInfo[4][4]);
 
 }
+
+// populate names of organizations
 
 function showOrg (selector, orgName) {
     $(selector)
