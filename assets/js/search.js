@@ -8,6 +8,8 @@ var apiKey = "WY3pauZYdH3LtBAMrg6nUuprjR3ob4F4QkCualrLU8uNjQuiz2";
 
 var apiSecret = "rUMx8wxwlkTMLB4TjZgjHsJdtK3v9Wo4P5t21lfc";
 
+var dogsInfo = [];
+
 // get token function
 
 function getToken(url, breed, zipcode) {
@@ -31,16 +33,15 @@ function getToken(url, breed, zipcode) {
 
       //pass token to dog search
 
-      getDogs(
-        dogCall + "&breed=" + breed + "&location=" + zipcode + "&distance=50",
-        token
-      );
+      url = dogCall + "&breed=" + breed + "&location=" + zipcode + "&distance=50";
+
+      getDogs(url, token);
     });
 }
 
 //get organization name function
 
-function getOrg(url, token) {
+function getOrg(url, token, selector) {
   fetch(url, { headers: { Authorization: "Bearer " + token } })
     .then(function (response) {
       console.log(response);
@@ -49,8 +50,7 @@ function getOrg(url, token) {
     })
     .then(function (data) {
       
-      nameOrg = data.organization.name;
-
+        showOrg(selector, data.organization.name);
       });
 
     }
@@ -69,86 +69,84 @@ function getDogs(url, token) {
 
       // do the following for each of the five results:
 
-
-
         //address
 
-        address_0 = dogData.animals[0].contact.address;
-        address1_0 = dogData.animals[0].contact.address.address1;
-        address2_0 = dogData.animals[0].contact.address.address2;
-        city_0 = dogData.animals[0].contact.address.city;
-        state_0 = dogData.animals[0].contact.address.state;
-        postcode_0 = dogData.animals[0].contact.address.postcode;
+        address_0 = data.animals[0].contact.address;
+        address1_0 = data.animals[0].contact.address.address1;
+        address2_0 = data.animals[0].contact.address.address2;
+        city_0 = data.animals[0].contact.address.city;
+        state_0 = data.animals[0].contact.address.state;
+        postcode_0 = data.animals[0].contact.address.postcode;
         stringAddress_0 =
           address1_0 + ", " + city_0 + ", " + state_0 + ", " + postcode_0;
   
-        address_1 = dogData.animals[1].contact.address;
-        address1_1 = dogData.animals[1].contact.address.address1;
-        address2_1 = dogData.animals[1].contact.address.address2;
-        city_1 = dogData.animals[1].contact.address.city;
-        state_1 = dogData.animals[1].contact.address.state;
-        postcode_1 = dogData.animals[1].contact.address.postcode;
+        address_1 = data.animals[1].contact.address;
+        address1_1 = data.animals[1].contact.address.address1;
+        address2_1 = data.animals[1].contact.address.address2;
+        city_1 = data.animals[1].contact.address.city;
+        state_1 = data.animals[1].contact.address.state;
+        postcode_1 = data.animals[1].contact.address.postcode;
         stringAddress_1 =
           address1_1 + ", " + city_1 + ", " + state_1 + ", " + postcode_1;
   
-        address_2 = dogData.animals[2].contact.address;
-        address1_2 = dogData.animals[2].contact.address.address1;
-        address2_2 = dogData.animals[2].contact.address.address2;
-        city_2 = dogData.animals[2].contact.address.city;
-        state_2 = dogData.animals[2].contact.address.state;
-        postcode_2 = dogData.animals[2].contact.address.postcode;
+        address_2 = data.animals[2].contact.address;
+        address1_2 = data.animals[2].contact.address.address1;
+        address2_2 = data.animals[2].contact.address.address2;
+        city_2 = data.animals[2].contact.address.city;
+        state_2 = data.animals[2].contact.address.state;
+        postcode_2 = data.animals[2].contact.address.postcode;
         stringAddress_2 =
           address1_2 + ", " + city_2 + ", " + state_2 + ", " + postcode_2;
   
-        address_3 = dogData.animals[3].contact.address;
-        address1_3 = dogData.animals[3].contact.address.address1;
-        address2_3 = dogData.animals[3].contact.address.address2;
-        city_3 = dogData.animals[3].contact.address.city;
-        state_3 = dogData.animals[3].contact.address.state;
-        postcode_3 = dogData.animals[3].contact.address.postcode;
+        address_3 = data.animals[3].contact.address;
+        address1_3 = data.animals[3].contact.address.address1;
+        address2_3 = data.animals[3].contact.address.address2;
+        city_3 = data.animals[3].contact.address.city;
+        state_3 = data.animals[3].contact.address.state;
+        postcode_3 = data.animals[3].contact.address.postcode;
         stringAddress_3 =
           address1_3 + ", " + city_3 + ", " + state_3 + ", " + postcode_3;
   
-        address_4 = dogData.animals[4].contact.address;
-        address1_4 = dogData.animals[4].contact.address.address1;
-        address2_4 = dogData.animals[4].contact.address.address2;
-        city_4 = dogData.animals[4].contact.address.city;
-        state_4 = dogData.animals[4].contact.address.state;
-        postcode_4 = dogData.animals[4].contact.address.postcode;
+        address_4 = data.animals[4].contact.address;
+        address1_4 = data.animals[4].contact.address.address1;
+        address2_4 = data.animals[4].contact.address.address2;
+        city_4 = data.animals[4].contact.address.city;
+        state_4 = data.animals[4].contact.address.state;
+        postcode_4 = data.animals[4].contact.address.postcode;
         stringAddress_4 =
           address1_4 + ", " + city_4 + ", " + state_4 + ", " + postcode_4;
   
         // Age
   
-        age_0 = dogData.animals[0].age;
-        age_1 = dogData.animals[1].age;
-        age_2 = dogData.animals[2].age;
-        age_3 = dogData.animals[3].age;
-        age_4 = dogData.animals[4].age;
+        age_0 = data.animals[0].age;
+        age_1 = data.animals[1].age;
+        age_2 = data.animals[2].age;
+        age_3 = data.animals[3].age;
+        age_4 = data.animals[4].age;
   
         // Name
   
-        dogName_0 = dogData.animals[0].name;
-        dogName_1 = dogData.animals[1].name;
-        dogName_2 = dogData.animals[2].name;
-        dogName_3 = dogData.animals[3].name;
-        dogName_4 = dogData.animals[4].name;
+        dogName_0 = data.animals[0].name;
+        dogName_1 = data.animals[1].name;
+        dogName_2 = data.animals[2].name;
+        dogName_3 = data.animals[3].name;
+        dogName_4 = data.animals[4].name;
   
         //Pic
   
-        smallPic_0 = dogData.animals[0].photos[0].small;
-        smallPic_1 = dogData.animals[1].photos[0].small;
-        smallPic_2 = dogData.animals[2].photos[0].small;
-        smallPic_3 = dogData.animals[3].photos[0].small;
-        smallPic_4 = dogData.animals[4].photos[0].small;
+        smallPic_0 = data.animals[0].photos[0].small;
+        smallPic_1 = data.animals[1].photos[0].small;
+        smallPic_2 = data.animals[2].photos[0].small;
+        smallPic_3 = data.animals[3].photos[0].small;
+        smallPic_4 = data.animals[4].photos[0].small;
   
         //Breed
   
-        breed_0 = dogData.animals[0].breeds.primary;
-        breed_1 = dogData.animals[1].breeds.primary;
-        breed_2 = dogData.animals[2].breeds.primary;
-        breed_3 = dogData.animals[3].breeds.primary;
-        breed_4 = dogData.animals[4].breeds.primary;
+        breed_0 = data.animals[0].breeds.primary;
+        breed_1 = data.animals[1].breeds.primary;
+        breed_2 = data.animals[2].breeds.primary;
+        breed_3 = data.animals[3].breeds.primary;
+        breed_4 = data.animals[4].breeds.primary;
   
         codeAddress(stringAddress_0);
         codeAddress(stringAddress_1);
@@ -156,17 +154,22 @@ function getDogs(url, token) {
         codeAddress(stringAddress_3);
         codeAddress(stringAddress_4);
   
-        // save data in local storage
+        console.log("Two");
   
-        saveData = [
-          [dogName_0, smallPic_0, breed_0, age_0, orgName_0],
-          [dogName_1, smallPic_1, breed_1, age_1, orgName_1],
-          [dogName_2, smallPic_2, breed_2, age_2, orgName_2],
-          [dogName_3, smallPic_3, breed_3, age_3, orgName_3],
-          [dogName_4, smallPic_3, breed_4, age_4, orgName_4],
+        dogsInfo = [
+          [dogName_0, smallPic_0, breed_0, age_0],
+          [dogName_1, smallPic_1, breed_1, age_1],
+          [dogName_2, smallPic_2, breed_2, age_2],
+          [dogName_3, smallPic_3, breed_3, age_3],
+          [dogName_4, smallPic_3, breed_4, age_4],
         ];
   
-        localStorage.setItem("data", JSON.stringify(saveData));
+        console.log(dogsInfo);
+
+        showDogsInfo();
+
+        // save data in local storage
+        // localStorage.setItem("data", JSON.stringify(saveData));
   
         saveAddress = [
           stringAddress_0,
@@ -176,22 +179,27 @@ function getDogs(url, token) {
           stringAddress_4,
         ];
   
-        localStorage.setItem("locations", JSON.stringify(saveAddress));
+        // localStorage.setItem("locations", JSON.stringify(saveAddress));
 
       // Org Name
 
-      org_id_0 = data.animals[0].organization_id;
-      org_id_1 = data.animals[1].organization_id;
-      org_id_2 = data.animals[2].organization_id;
-      org_id_3 = data.animals[3].organization_id;
-      org_id_4 = data.animals[4].organization_id;
+    //   org_id_0 = data.animals[0].organization_id;
+    //   org_id_1 = data.animals[1].organization_id;
+    //   org_id_2 = data.animals[2].organization_id;
+    //   org_id_3 = data.animals[3].organization_id;
+    //   org_id_4 = data.animals[4].organization_id;
 
-      getOrg(orgCall + "/" + org_id_0, token);
-      getOrg(orgCall + "/" + org_id_1, token);
-      getOrg(orgCall + "/" + org_id_2, token);
-      getOrg(orgCall + "/" + org_id_3, token);
-      getOrg(orgCall + "/" + org_id_4, token);
-
+    getOrg(orgCall + "/" + data.animals[0].organization_id, token, ".dog0");
+    getOrg(orgCall + "/" + data.animals[1].organization_id, token, ".dog1");
+    getOrg(orgCall + "/" + data.animals[2].organization_id, token, ".dog2");
+    getOrg(orgCall + "/" + data.animals[3].organization_id, token, ".dog3");
+    getOrg(orgCall + "/" + data.animals[4].organization_id, token, ".dog4");
+    
+    
+    //   getOrg(orgCall + "/" + org_id_1, token);
+    //   getOrg(orgCall + "/" + org_id_2, token);
+    //   getOrg(orgCall + "/" + org_id_3, token);
+    //   getOrg(orgCall + "/" + org_id_4, token);
       
     });
 }
@@ -247,90 +255,101 @@ getToken(tokenCall, breed, zipcode);
 
 // get the data back from local storage
 
-getData = localStorage.getItem("data");
-gotData = JSON.parse(getData);
-console.log(gotData);
+
+
+// console.log(gotData);
 
 getAddresses = localStorage.getItem("locations");
 gotAddresses = JSON.parse(getAddresses);
 console.log(gotAddresses);
 
-$(".dog0").children().first().text(gotData[0][0]);
-$(".dog0").children().first().next().attr("src", gotData[0][1]);
+console.log("One");
+
+function showDogsInfo () {
+
+$(".dog0").children().first().text(dogsInfo[0][0]);
+$(".dog0").children().first().next().attr("src", dogsInfo[0][1]);
 $(".dog0")
   .children("p")
   .first()
-  .text("Breed: " + gotData[0][2]);
+  .text("Breed: " + dogsInfo[0][2]);
 $(".dog0")
   .children("p")
   .first()
   .next()
-  .text("Age: " + gotData[0][3]);
-$(".dog0")
-  .children("p")
-  .last()
-  .text("Org/Owner: " + gotData[0][4]);
+  .text("Age: " + dogsInfo[0][3]);
 
-$(".dog1").children().first().text(gotData[1][0]);
-$(".dog1").children().first().next().attr("src", gotData[1][1]);
+
+$(".dog1").children().first().text(dogsInfo[1][0]);
+$(".dog1").children().first().next().attr("src", dogsInfo[1][1]);
 $(".dog1")
   .children("p")
   .first()
-  .text("Breed: " + gotData[1][2]);
+  .text("Breed: " + dogsInfo[1][2]);
 $(".dog1")
   .children("p")
   .first()
   .next()
-  .text("Age: " + gotData[1][3]);
+  .text("Age: " + dogsInfo[1][3]);
 $(".dog1")
   .children("p")
   .last()
-  .text("Org/Owner: " + gotData[1][4]);
+  .text("Org/Owner: " + dogsInfo[1][4]);
 
-$(".dog2").children().first().text(gotData[2][0]);
-$(".dog2").children().first().next().attr("src", gotData[2][1]);
+$(".dog2").children().first().text(dogsInfo[2][0]);
+$(".dog2").children().first().next().attr("src", dogsInfo[2][1]);
 $(".dog2")
   .children("p")
   .first()
-  .text("Breed: " + gotData[2][2]);
+  .text("Breed: " + dogsInfo[2][2]);
 $(".dog2")
   .children("p")
   .first()
   .next()
-  .text("Age: " + gotData[2][3]);
+  .text("Age: " + dogsInfo[2][3]);
 $(".dog2")
   .children("p")
   .last()
-  .text("Org/Owner: " + gotData[2][4]);
+  .text("Org/Owner: " + dogsInfo[2][4]);
 
-$(".dog3").children().first().text(gotData[3][0]);
-$(".dog3").children().first().next().attr("src", gotData[3][1]);
+$(".dog3").children().first().text(dogsInfo[3][0]);
+$(".dog3").children().first().next().attr("src", dogsInfo[3][1]);
 $(".dog3")
   .children("p")
   .first()
-  .text("Breed: " + gotData[3][2]);
+  .text("Breed: " + dogsInfo[3][2]);
 $(".dog3")
   .children("p")
   .first()
   .next()
-  .text("Age: " + gotData[3][3]);
+  .text("Age: " + dogsInfo[3][3]);
 $(".dog3")
   .children("p")
   .last()
-  .text("Org/Owner: " + gotData[3][4]);
+  .text("Org/Owner: " + dogsInfo[3][4]);
 
-$(".dog4").children().first().text(gotData[4][0]);
-$(".dog4").children().first().next().attr("src", gotData[4][1]);
+$(".dog4").children().first().text(dogsInfo[4][0]);
+$(".dog4").children().first().next().attr("src", dogsInfo[4][1]);
 $(".dog4")
   .children("p")
   .first()
-  .text("Breed: " + gotData[4][2]);
+  .text("Breed: " + dogsInfo[4][2]);
 $(".dog4")
   .children("p")
   .first()
   .next()
-  .text("Age: " + gotData[4][3]);
+  .text("Age: " + dogsInfo[4][3]);
 $(".dog4")
   .children("p")
   .last()
-  .text("Org/Owner: " + gotData[4][4]);
+  .text("Org/Owner: " + dogsInfo[4][4]);
+
+}
+
+function showOrg (selector, orgName) {
+    $(selector)
+    .children("p")
+    .last()
+    .text("Org/Owner: " + orgName);
+
+}
