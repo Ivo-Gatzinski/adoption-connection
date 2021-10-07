@@ -249,18 +249,32 @@ getAddresses = localStorage.getItem("locations");
 gotAddresses = JSON.parse(getAddresses);
 console.log(gotAddresses);
 
-// dogName1 =
-// dogName2 =
-// dogName3 =
-// dogName4 =
-
 $(".dog0").children().first().text(gotData[0][0]);
 $(".dog0").children().first().next().attr("src", gotData[0][1]);
 $(".dog0").children("p").first().text("Breed: " + gotData[0][2]);
 $(".dog0").children("p").first().next().text("Age: " + gotData[0][3]);
 $(".dog0").children("p").last().text("Org/Owner: " + gotData[0][4]);
 
-// $(".dog1");
-// $(".dog2");
-// $(".dog3");
-// $(".dog4");
+$(".dog1").children().first().text(gotData[1][0]);
+$(".dog1").children().first().next().attr("src", gotData[1][1]);
+$(".dog1").children("p").first().text("Breed: " + gotData[1][2]);
+$(".dog1").children("p").first().next().text("Age: " + gotData[1][3]);
+$(".dog1").children("p").last().text("Org/Owner: " + gotData[1][4]);
+
+$(".dog2").children().first().text(gotData[2][0]);
+$(".dog2").children().first().next().attr("src", gotData[2][1]);
+$(".dog2").children("p").first().text("Breed: " + gotData[2][2]);
+$(".dog2").children("p").first().next().text("Age: " + gotData[2][3]);
+$(".dog2").children("p").last().text("Org/Owner: " + gotData[2][4]);
+
+$(".dog3").children().first().text(gotData[3][0]);
+$(".dog3").children().first().next().attr("src", gotData[3][1]);
+$(".dog3").children("p").first().text("Breed: " + gotData[3][2]);
+$(".dog3").children("p").first().next().text("Age: " + gotData[3][3]);
+$(".dog3").children("p").last().text("Org/Owner: " + gotData[3][4]);
+
+$(".dog4").children().first().text(gotData[4][0]);
+$(".dog4").children().first().next().attr("src", gotData[4][1]);
+$(".dog4").children("p").first().text("Breed: " + gotData[4][2]);
+$(".dog4").children("p").first().next().text("Age: " + gotData[4][3]);
+$(".dog4").children("p").last().text("Org/Owner: " + gotData[4][4]);
