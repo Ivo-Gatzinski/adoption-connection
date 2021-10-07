@@ -8,15 +8,9 @@ var apiKey = "WY3pauZYdH3LtBAMrg6nUuprjR3ob4F4QkCualrLU8uNjQuiz2";
 
 var apiSecret = "rUMx8wxwlkTMLB4TjZgjHsJdtK3v9Wo4P5t21lfc";
 
-var zipCode = $("#code");
-
-var breed = $("#breed");
-
-var responseText = document.getElementById('response-text');
-
 // get token function
 
-function getToken (url) {
+function getToken (url, breed, zipCode) {
 
 fetch(url, {
 	method: 'POST',
@@ -51,15 +45,7 @@ function getOrg(url, token) {
 )
     .then(function (response) {
       console.log(response);
-      // display the status
-
-      responseText.textContent = response.status;
-      // check the response status for success
-      if (response.status === 200) {
-        responseText.style.color = 'green';
-      } else {
-        responseText.style.color = 'red';
-      }
+      
       return response.json();
     })
     .then(function (data) {
@@ -81,15 +67,7 @@ function getDogs(url, token) {
   )
       .then(function (response) {
         console.log(response);
-        // display the status
-  
-        responseText.textContent = response.status;
-        // check the response status for success
-        if (response.status === 200) {
-          responseText.style.color = 'green';
-        } else {
-          responseText.style.color = 'red';
-        }
+        
         return response.json();
       })
       .then(function (data) {
@@ -217,9 +195,24 @@ var map;
     });
   }
 
-// get token first
+// get parameters, get token, then submit parameters to get token and then search
 
-$(".pure-button").on(getToken(tokenCall));
+$("#form").on("submit", function (event) {
+
+event.preventDefault();
+
+zipCode = $("#code").val();
+
+breed = $("#breed").val();
+
+console.log(zipCode);
+console.log(breed);
+
+getToken(tokenCall, breed, zipCode);
+
+
+}
+);
 
 
   
