@@ -8,9 +8,9 @@ var apiKey = "WY3pauZYdH3LtBAMrg6nUuprjR3ob4F4QkCualrLU8uNjQuiz2";
 
 var apiSecret = "rUMx8wxwlkTMLB4TjZgjHsJdtK3v9Wo4P5t21lfc";
 
-var zipCode = "10017";
+var zipCode = $("#code");
 
-var breed = "Maltese";
+var breed = $("#breed");
 
 var responseText = document.getElementById('response-text');
 
@@ -219,7 +219,7 @@ var map;
 
 // get token first
 
-getToken(tokenCall);
+$(".pure-button").on(getToken(tokenCall));
 
 
   
