@@ -231,4 +231,7 @@ $("#form").on("submit", function (event) {
   breed = $("#breed").val();
 
   getToken(tokenCall, breed, zipCode);
+
+  window.location.assign("./search.html");
+
 });
