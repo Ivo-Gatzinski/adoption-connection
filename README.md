@@ -30,7 +30,7 @@ Github was new for everone in the group as well; figuring  out how to create bra
 
 ![homepage](assets/images/homepage.png)
 
-![searchresults](assets\images\profile.png)
+![searchresults](assets/images/profile.png)
 
 ![profile](assets/images/searchresults.png)
 
