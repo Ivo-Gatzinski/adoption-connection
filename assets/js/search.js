@@ -215,7 +215,7 @@ function initMap() {
     zoom: 10,
     center: latlng,
   };
-  map = new google.maps.Map(document.getElementById("#map"), mapOptions);
+  map = new google.maps.Map(document.getElementById("map"), mapOptions);
   codeAddress(address);
 }
 function codeAddress(puppyAddress) {

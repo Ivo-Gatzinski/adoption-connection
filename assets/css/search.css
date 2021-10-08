@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+#map {
+
+  width: 400px;
+  height: 400px;
+  margin-left: 25%;
+
+
+}
+
 a {
   text-decoration: none;
   color: rgb(61, 146, 201);
