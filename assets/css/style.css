@@ -18,6 +18,11 @@ body {
     font-size: 13px;
 }
 
+#map {
+    height: 400px;
+    width: 400px;
+  }
+
 h1,
 h2,
 h3,
