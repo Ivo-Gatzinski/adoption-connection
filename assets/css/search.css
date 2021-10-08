@@ -44,7 +44,12 @@ h3 {
 .content {
   padding: 2em 1em 0;
 }
-
+.sidebar-form {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: .5em;
+}
 @media (min-width: 48em) {
   .content {
     padding: 2em 3em 0;
