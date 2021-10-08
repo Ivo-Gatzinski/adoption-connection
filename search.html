@@ -66,10 +66,10 @@
       </div>
       <div ID="map"></div>
       <div class="sidebar pure-u-1 pure-u-md-1-4">
-        <div class="pure-g">
-     
-            <form id="form" class="pure-form pure-form-stacked" action="./search.html">
-              <fieldset>
+        
+          
+            <form id="form" class="pure-form pure-form-stacked sidebar-form"> 
+              
           
                 <label for="code">Zipcode</label>
                 <input id="code" type="text" placeholder="Zip Code" name="zipcode">
@@ -78,27 +78,14 @@
                 <label for="breed">Breed</label>
                 <input id="breed" type="text" placeholder="Breed" name="breed">
           
-                <button type="submit" class="pure-button">Search!</button>
-              </fieldset>
+              <button type="submit" class="pure-button search-button">Search!</button>
             </form>
-        </div>
-          <table class="pure-table">
-            <thead>
-              <tr>
-              <th>Favorites</th>
-              </tr>
-            </thead>
-            <!-- JS placeholder for favorite data to generate <tr> blocks with values of variables created holding Strings and Variables (pulling the data from the API)-->
-            <tbody id="favoritesTable" class="table">
-              <!-- JS  HTML template to create in JS -->
-              
-            </tbody>
-          </table>
+        </div>      
+            </tbody
          </div>
 
       </div>
     </div>
-    <div ID="map"></div>
   </body>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
