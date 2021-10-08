@@ -111,10 +111,10 @@ h2 {
 
 #map {
     display:flex;
-    position: relative;
+    align-items: end;
     right: -800px;
     width:600px;
-    height: 300px;
+    height: 400px;
   }
   .footer {
     color: #7f8c8d;
