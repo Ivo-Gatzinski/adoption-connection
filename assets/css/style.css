@@ -90,6 +90,7 @@ button {
         flex-wrap: nowrap;
         height: 48px;
         align-items: center;
+        padding: 5px;
         
     }
 input, label {
@@ -106,8 +107,9 @@ input, label {
     header {
         display: flex;
         flex-wrap: nowrap;
-        height: 48px;
+        height: 64px;
         align-items: center;
+        padding: 5px;
         
     }
 input, label {
