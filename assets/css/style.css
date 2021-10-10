@@ -61,16 +61,23 @@ button:hover {
 
     header {
         display: block;
-        height: 138px;
-        align-items: top;
+        height: 112px;
         
     }
     form {
         display: block;
     }
-input, label {
-    margin: 5px;
+input {
     max-width: 92px;
+    margin: 5px;
+}
+
+label {
+    font-size: 75%;
+}
+
+button {
+    margin-top: 10px;
 }
 
 }
