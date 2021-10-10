@@ -65,8 +65,12 @@ button:hover {
         align-items: top;
         
     }
+    form {
+        display: block;
+    }
 input, label {
     margin: 5px;
+    max-width: 92px;
 }
 
 }
