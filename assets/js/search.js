@@ -250,8 +250,8 @@ getToken(tokenCall, breed, zipcode);
 // populate puppies results
 
 function showDogsInfo() {
-  $(".dog0").children().first().text(dogsInfo[0][0]);
-  $(".dog0").children().first().next().attr("src", dogsInfo[0][1]);
+  $(".dog0").children().first().attr("src", dogsInfo[0][1]);
+  $("#link1").text(dogsInfo[0][0]);
   $(".dog0")
     .children("p")
     .first()

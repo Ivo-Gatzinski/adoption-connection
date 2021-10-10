@@ -6,7 +6,7 @@ body {
     background-image: url("../images/doggies.jpg");
     font-family: 'Underdog', cursive;
     background-repeat: repeat;
-    margin-top: 100px;
+    margin-top: 125px;
     
 }
 
@@ -16,65 +16,94 @@ main {
 
 }
 
-form {
-    display: flex;
-    flex-wrap: nowrap;
-    flex: auto;
+header {
+    font-size: 150%;
+    background-color: white;
     justify-content: center;
 }
 
-h1,
-h2 {
-    background-color: white;
-    height: 48px;
-    padding-top: 24px;
+form {
+    text-align: center;
+    padding-top: 8px;
 }
 
+input {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
 
 label {
     color: black;
+    background-color: white;
     border-radius: 5px;
-    height: 38px;
     text-align: left;
-    padding-top: 12px;
     flex: auto;
 
 }
 
-.is-center {
-    text-align: center;
-}
-
-.pure-form label {
-    margin: 1em 0 0;
-    font-weight: bold;
-    font-size: 100%;
-}
-
-.pure-form input[type] {
-    border: 2px solid #ddd;
-    box-shadow: none;
-    font-size: 100%;
-    width: 100%;
-    margin-bottom: 1em;
-}
-
-
-.pure-button {
-    background-color: #1f8dd6;
-    color: white;
-    padding: 0.5em 2em;
+button {
+    height: 32px;
+    background-color:white;
+    color: black;
     border-radius: 5px;
 }
-
-
+ 
+button:hover {
+    height: 32px;
+    background-color:black;
+    color: white;
+    border-radius: 5px;
+}
  
 
-@media (min-width: 48em) {
+@media (min-width: 275px) {
+
+    header {
+        display: block;
+        height: 138px;
+        align-items: top;
+        
+    }
+input, label {
+    margin: 5px;
+}
 
 }
 
 
-@media (min-width: 78em) {
+@media (min-width: 768px) {
     
+    header {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 48px;
+        align-items: center;
+        
+    }
+input, label {
+    margin: 5px;
+    max-width: 112px;
+}
+
+
+
+}
+
+@media (min-width: 992px) {
+    
+    header {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 48px;
+        align-items: center;
+        
+    }
+input, label {
+    margin: 5px;
+    max-width: 198px;
+}
+
+
+
 }
