@@ -14,7 +14,7 @@ main {
 @media (min-width: 275px) {
  
 input {
-  max-width: 72px;
+  max-width: 80px;
 }
 
   #map {

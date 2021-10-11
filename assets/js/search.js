@@ -1,4 +1,4 @@
-var dogCall = "https://api.petfinder.com/v2/animals?type=dog&limit=5";
+var dogCall = "https://api.petfinder.com/v2/animals?type=dog&limit=6";
 
 var tokenCall = "https://api.petfinder.com/v2/oauth2/token";
 
@@ -12,7 +12,7 @@ var dogsInfo = [];
 
 // get token function
 
-function getToken(url, breed, zipcode) {
+function getToken(url, breed, code) {
   fetch(url, {
     method: "POST",
     body:
@@ -33,7 +33,7 @@ function getToken(url, breed, zipcode) {
       //pass token to dog search
 
       url =
-        dogCall + "&breed=" + breed + "&location=" + zipcode + "&distance=50";
+        dogCall + "&breed=" + breed + "&location=" + code + "&distance=50";
 
       getDogs(url, token);
     });
@@ -195,11 +195,11 @@ function getDogs(url, token) {
 
       // get Org Name for five results
 
-      getOrg(orgCall + "/" + data.animals[0].organization_id, token, ".dog0");
-      getOrg(orgCall + "/" + data.animals[1].organization_id, token, ".dog1");
-      getOrg(orgCall + "/" + data.animals[2].organization_id, token, ".dog2");
-      getOrg(orgCall + "/" + data.animals[3].organization_id, token, ".dog3");
-      getOrg(orgCall + "/" + data.animals[4].organization_id, token, ".dog4");
+      getOrg(orgCall + "/" + data.animals[0].organization_id, token, ".org0");
+      getOrg(orgCall + "/" + data.animals[1].organization_id, token, ".org1");
+      getOrg(orgCall + "/" + data.animals[2].organization_id, token, ".org2");
+      getOrg(orgCall + "/" + data.animals[3].organization_id, token, ".org3");
+      getOrg(orgCall + "/" + data.animals[4].organization_id, token, ".org4");
     });
 }
 
@@ -243,24 +243,20 @@ const params = Object.fromEntries(urlSearchParams.entries());
 
 breed = params.breed;
 
-zipcode = params.zipcode;
+code = params.code;
 
-getToken(tokenCall, breed, zipcode);
+getToken(tokenCall, breed, code);
 
 // populate puppies results
 
 function showDogsInfo() {
   $(".dog0").children().first().attr("src", dogsInfo[0][1]);
-  $("#link1").text(dogsInfo[0][0]);
-  $(".dog0")
-    .children("p")
-    .first()
-    .text("Breed: " + dogsInfo[0][2]);
-  $(".dog0")
-    .children("p")
-    .first()
-    .next()
-    .text("Age: " + dogsInfo[0][3]);
+  $(".name0").text(dogsInfo[0][0]);
+  $(".description0")
+    .text(dogsInfo[0][4]);
+  $(".age0").text("Age: " + dogsInfo[0][3]);
+  $(".breed0").text("Breed: " + dogsInfo[0][2]);
+  $(".link0").attr("href", dogsInfo[0][7]);
 
   $(".dog1").children().first().text(dogsInfo[1][0]);
   $(".dog1").children().first().next().attr("src", dogsInfo[1][1]);
@@ -332,10 +328,7 @@ function showDogsInfo() {
 // populate names of organizations
 
 function showOrg(selector, orgName) {
-  $(selector)
-    .children("p")
-    .last()
-    .text("Org/Owner: " + orgName);
+  $(selector).text(orgName);
 }
 
 // get selected dog
