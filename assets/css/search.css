@@ -1,41 +1,53 @@
 body {
   font-family: 'Underdog', cursive;
+  background-color: lightgray;
 }
 
-#map {
-
-  width: 400px;
-  height: 400px;
-  margin-left: 25%;
-
-
+main {
+  text-align: center;
 }
 
 .search-form {
-  background-color: white;
-  border-radius: 50%;
+  padding: 10px;
 }
 
-#results {
-display: flex;
-flex-wrap: wrap;
-
-}
-
-
-a {
-  text-decoration: none;
-  color: rgb(61, 146, 201);
-}
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-
-h3 {
-  font-weight: 100;
-}
-
-@media (min-width: 48em) {
+@media (min-width: 275px) {
  
+input {
+  max-width: 72px;
+}
+
+  #map {
+    margin: auto;
+    width: 320px;
+    height: 275px;
+    border-radius: 5px;
+  
+  }
+
+}
+
+@media (min-width: 768px) {
+ 
+  #map {
+
+    width: 768px;
+    height: 480px;
+    border-radius: 5px;
+  
+  }
+
+}
+
+@media (min-width: 992px) {
+ 
+  #map {
+
+    width: 992px;
+    height: 480px;
+    border-radius: 5px;
+    margin-left: 15%;
+  
+  }
+
 }
